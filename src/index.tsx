@@ -4,9 +4,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { store } from "./action";
 import { Provider } from "react-redux";
 import App from "./App";
-import './style/index.css'
+import "./style/index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
+import { initHome } from "./action/Home";
+
+store.dispatch(initHome());
 
 ReactDOM.render(
   <React.StrictMode>
