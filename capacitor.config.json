@@ -1,5 +1,5 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "fr.weebo.compteur",
 	"appName": "Focompteur2",
 	"webDir": "build",
 	"bundledWebRuntime": false

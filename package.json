@@ -1,15 +1,18 @@
 {
-  "name": "Focompteur2",
+  "name": "focompteur2",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "3.0.2",
     "@capacitor/app": "1.0.2",
     "@capacitor/core": "3.0.2",
     "@capacitor/haptics": "1.0.2",
     "@capacitor/keyboard": "1.0.2",
     "@capacitor/status-bar": "1.0.2",
+    "@craco/craco": "^6.1.2",
     "@ionic/react": "^5.5.0",
     "@ionic/react-router": "^5.5.0",
+    "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
@@ -19,12 +22,16 @@
     "@types/react-dom": "^16.9.10",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "autoprefixer": "^9",
     "ionicons": "^5.4.0",
+    "postcss": "^7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.1.3",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
@@ -41,10 +48,14 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "ionic:build": "craco build",
+    "ionic:serve": "craco start",
+    "dev:ios": "ionic capacitor run ios --livereload --external",
+    "dev:android": "ionic capacitor run android --livereload --external",
+    "sync": "npx cap sync"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +77,5 @@
   },
   "devDependencies": {
     "@capacitor/cli": "3.0.2"
-  },
-  "description": "An Ionic project"
+  }
 }
