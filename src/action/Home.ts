@@ -40,5 +40,5 @@ const homeSlicer = createSlice({
     },
   },
 });
-
+export const { setDarkMode } = homeSlicer.actions;
 export default homeSlicer.reducer;
