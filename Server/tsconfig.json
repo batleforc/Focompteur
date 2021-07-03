@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es6"],
+    "esModuleInterop": true,
+    "outDir": "BuildServer",
+    "target": "es2020",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "watchOptions": {
+    "excludeDirectories": ["node_modules", "BuildServer"]
+  }
+}

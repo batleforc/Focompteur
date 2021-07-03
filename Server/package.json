@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "dotenv-flow": "^3.2.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "nodemon": "^2.0.9",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development concurrently --names \"Build,Watch\" -c \"grey.bold,blue.bold\" \"yarn:watchBuild\" \"yarn:watchSrc\" --node-env=development",
+    "build": "cross-env NODE_ENV=production tsc",
+    "watchBuild": "nodemon -q -w BuildServer BuildServer/index.js",
+    "watchSrc": "tsc -w"
+  }
+}
