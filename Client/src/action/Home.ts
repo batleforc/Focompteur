@@ -21,7 +21,7 @@ export const initHome = createAsyncThunk("Home/init", async () => {
 });
 
 const initialState = {
-  titre: "Focompteur",
+  titre: "Forcompteur",
   dark: true,
 } as HomeInitialState;
 

@@ -24,7 +24,7 @@ class WebServer {
     });
     var static_pages = new Koa();
     static_pages.use(
-      serve(path.resolve(__dirname, "..", "..", "Client", "build"))
+      serve(path.resolve(__dirname, "..", "..", "..", "Client", "build"))
     );
     this.app.use(mount("/", static_pages));
     this.app.use(cors());
@@ -44,8 +44,17 @@ class WebServer {
       if (ctx.body === undefined) {
         ctx.type = "html";
         try {
+          console.log(__dirname);
           ctx.body = fs.readFileSync(
-            path.resolve(__dirname, "..", "..", "Client", "build", "index.html")
+            path.resolve(
+              __dirname,
+              "..",
+              "..",
+              "..",
+              "Client",
+              "build",
+              "index.html"
+            )
           );
         } catch (error) {
           ctx.body = "<h1>Erreur 404 pas de client trouver</h1>";
