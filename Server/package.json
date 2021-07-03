@@ -11,13 +11,30 @@
     "dotenv-flow": "^3.2.0",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0",
     "nodemon": "^2.0.9",
+    "socket.io": "^4.1.2",
     "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.3",
+    "@types/koa-bodyparser": "^4.3.1",
+    "@types/koa-cors": "^0.0.0",
+    "@types/koa-router": "^7.4.2",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa__cors": "^3.0.2",
+    "@types/koa__router": "^8.0.4",
+    "@types/node": "^16.0.0"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development concurrently --names \"Build,Watch\" -c \"grey.bold,blue.bold\" \"yarn:watchBuild\" \"yarn:watchSrc\" --node-env=development",
     "build": "cross-env NODE_ENV=production tsc",
     "watchBuild": "nodemon -q -w BuildServer BuildServer/index.js",
     "watchSrc": "tsc -w"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.3",
+    "utf-8-validate": "^5.0.5"
   }
 }
