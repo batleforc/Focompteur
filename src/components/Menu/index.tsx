@@ -30,7 +30,7 @@ const Menu = ({
             <div className="block sm:ml-6">
               <div className="flex space-x-4">
                 <Link
-                  to="#"
+                  to="/"
                   className="text-white px-3 py-2 rounded-md text-xl font-medium"
                   aria-current="page"
                 >
