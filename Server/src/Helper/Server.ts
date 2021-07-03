@@ -43,9 +43,13 @@ class WebServer {
     this.app.use(async (ctx: any, next: any) => {
       if (ctx.body === undefined) {
         ctx.type = "html";
-        ctx.body = fs.readFileSync(
-          path.resolve(__dirname, "..", "..", "Client", "build", "index.html")
-        );
+        try {
+          ctx.body = fs.readFileSync(
+            path.resolve(__dirname, "..", "..", "Client", "build", "index.html")
+          );
+        } catch (error) {
+          ctx.body = "<h1>Erreur 404 pas de client trouver</h1>";
+        }
       }
       await next();
     });
