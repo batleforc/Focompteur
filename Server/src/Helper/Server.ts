@@ -44,7 +44,6 @@ class WebServer {
       if (ctx.body === undefined) {
         ctx.type = "html";
         try {
-          console.log(__dirname);
           ctx.body = fs.readFileSync(
             path.resolve(
               __dirname,
