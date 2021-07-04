@@ -30,6 +30,15 @@ const MenuBurger = ({
       available: !Auth.Authenticated,
       action: () => {},
     },
+    {
+      label: "LogOut",
+      link: false,
+      url: "/",
+      available: Auth.Authenticated,
+      action: () => {
+        console.log("Disconnect");
+      },
+    },
   ];
   return (
     <Menu
