@@ -21,14 +21,12 @@ const MenuBurger = ({
       link: true,
       url: "/",
       available: true,
-      action: () => {},
     },
     {
       label: "Login",
       link: true,
       url: "/login",
       available: !Auth.Authenticated,
-      action: () => {},
     },
     {
       label: "LogOut",
@@ -58,7 +56,7 @@ const MenuBurger = ({
             available={value.available}
             action={() => {
               dispatch(setShowBurger(false));
-              value.action() !== undefined && value.action();
+              value.action !== undefined && value.action();
             }}
           />
         ))}
