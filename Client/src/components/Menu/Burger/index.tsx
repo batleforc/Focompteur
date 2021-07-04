@@ -29,6 +29,12 @@ const MenuBurger = ({
       available: !Auth.Authenticated,
     },
     {
+      label: "Register",
+      link: true,
+      url: "/Register",
+      available: !Auth.Authenticated,
+    },
+    {
       label: "LogOut",
       link: false,
       url: "/",
