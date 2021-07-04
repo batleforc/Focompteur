@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
   name: String,
   surname: String,
   profilePic: String,
+  UiColor: Boolean,
 });
 
 export default mongoose.model("User", UserSchema);
