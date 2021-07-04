@@ -24,7 +24,7 @@ const BurgerItem = ({
     children: JSX.Element | JSX.Element[] | string;
   }) =>
     link ? (
-      <Link onClick={() => dispatch(setShowBurger(false))} to={url}>
+      <Link onClick={() => action !== undefined && action()} to={url}>
         {children}
       </Link>
     ) : (
