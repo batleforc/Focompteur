@@ -18,5 +18,8 @@ export const validateToken = (token: string, renewToken: boolean) => {
   return true;
 };
 
+export const getTokenContent = async (token: string, renewToken: boolean) =>
+  jwt.verify(token, getSecretKEy(renewToken));
+
 const getSecretKEy = (renewToken: boolean) =>
   renewToken ? getEnvString("JWT_KEY") : getEnvString("JWT_KEY_RENEW");
