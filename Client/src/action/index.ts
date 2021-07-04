@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Home from "./Home";
 import ShowModal from "./ShowModal";
+import Auth from "./Auth";
 export const store = configureStore({
   reducer: {
     Home,
     ShowModal,
+    Auth,
   },
 });
 
