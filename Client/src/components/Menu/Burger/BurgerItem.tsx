@@ -16,7 +16,7 @@ const BurgerItem = ({
   link: boolean;
   dispatch: AppDispatch;
   available: boolean;
-  action?: Function;
+  action: Function;
 }) => {
   const Item = ({
     children,
@@ -24,14 +24,14 @@ const BurgerItem = ({
     children: JSX.Element | JSX.Element[] | string;
   }) =>
     link ? (
-      <Link onClick={() => action !== undefined && action()} to={url}>
+      <Link onClick={() => action()} to={url}>
         {children}
       </Link>
     ) : (
       <button
         onClick={() => {
           dispatch(setShowBurger(false));
-          action !== undefined && action();
+          action();
         }}
       >
         {children}

@@ -49,7 +49,7 @@ const MenuBurger = ({
             available={value.available}
             action={() => {
               dispatch(setShowBurger(false));
-              value.action();
+              value.action() !== undefined && value.action();
             }}
           />
         ))}
