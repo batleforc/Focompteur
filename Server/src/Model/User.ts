@@ -9,6 +9,7 @@ const UserSchema = new mongoose.Schema({
   AllowEmail: { type: Boolean, default: false },
   ProfilePic: String,
   UiColor: { type: Boolean, default: false },
+  Token: [String],
 });
 
 export default mongoose.model("User", UserSchema);

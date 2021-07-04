@@ -9,6 +9,7 @@ export enum CompteurType {
 const CompteurSchema = new mongoose.Schema({
   Label: String,
   Type: CompteurType,
+  CreatedAt: { type: Date, default: Date.now },
   Param: {
     endDate: {
       type: Date,

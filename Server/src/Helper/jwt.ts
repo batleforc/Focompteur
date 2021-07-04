@@ -1,5 +1,6 @@
 import { getEnvString } from "./env";
 import jwt from "jsonwebtoken";
+import { JwtPayload } from "jsonwebtoken";
 export const getToken = async (payload: any, renewToken: boolean = false) =>
   jwt.sign(
     payload,
@@ -19,7 +20,16 @@ export const validateToken = (token: string, renewToken: boolean) => {
 };
 
 export const getTokenContent = async (token: string, renewToken: boolean) =>
-  jwt.verify(token, getSecretKEy(renewToken));
+  jwt.decode(token);
 
 const getSecretKEy = (renewToken: boolean) =>
   renewToken ? getEnvString("JWT_KEY") : getEnvString("JWT_KEY_RENEW");
+
+export const getPayloadJson = (payload: string | JwtPayload | null) => {
+  if (payload === null) return {};
+  if (typeof payload === "string") {
+    return JSON.parse(payload);
+  } else {
+    return payload as Object;
+  }
+};
