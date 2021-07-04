@@ -8,16 +8,35 @@ const BurgerItem = ({
   link,
   url,
   dispatch,
+  available,
+  action,
 }: {
   label: string;
   url: string;
   link: boolean;
   dispatch: AppDispatch;
+  available: boolean;
+  action?: Function;
 }) => {
-  return (
-    <Link onClick={() => dispatch(setShowBurger(false))} to={url}>
-      {label}
-    </Link>
-  );
+  const Item = ({
+    children,
+  }: {
+    children: JSX.Element | JSX.Element[] | string;
+  }) =>
+    link ? (
+      <Link onClick={() => dispatch(setShowBurger(false))} to={url}>
+        {children}
+      </Link>
+    ) : (
+      <button
+        onClick={() => {
+          dispatch(setShowBurger(false));
+          action !== undefined && action();
+        }}
+      >
+        {children}
+      </button>
+    );
+  return <Item>{label}</Item>;
 };
 export default connect((state) => ({}))(BurgerItem);
