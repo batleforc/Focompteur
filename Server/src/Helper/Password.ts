@@ -1,8 +1,8 @@
 import bcrypt from "bcrypt";
-import { getEnvString } from "./env";
+import { getEnvNumber, getEnvString } from "./env";
 
 export const hashPassword = (password: string) =>
-  bcrypt.hashSync(password, getEnvString("PWD_SALTROUND"));
+  bcrypt.hashSync(password, getEnvNumber("PWD_SALTROUND"));
 
 export const checkPassword = (password: string, hash: string) =>
   bcrypt.compareSync(password, hash);

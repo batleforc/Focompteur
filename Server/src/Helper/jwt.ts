@@ -6,7 +6,9 @@ export const getToken = async (payload: any, renewToken: boolean = false) =>
     payload,
     renewToken ? getEnvString("JWT_KEY") : getEnvString("JWT_KEY_RENEW"),
     {
-      expiresIn: getSecretKEy(renewToken),
+      expiresIn: renewToken
+        ? getEnvString("JWT_EXPIRATION")
+        : getEnvString("JWT_EXPIRATION_RENEW"),
     }
   );
 

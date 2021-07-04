@@ -3,7 +3,7 @@ const regPassword =
   "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
 const regNameSurname = "\\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+";
 const regEmail =
-  "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/";
+  "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
 
 export const validateUsername = (username: string | undefined) =>
   username !== undefined && username.match(regUsername);
