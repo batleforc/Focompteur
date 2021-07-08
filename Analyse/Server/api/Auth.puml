@@ -1,0 +1,31 @@
+@startuml AuthEndPoint
+
+package Auth{
+  node GetUser[
+    GET: /
+    User Profile
+  ]
+  node PostLogin[
+    POST: /login
+    Authentifie l'uttilisateur
+    via un Renew token
+  ]
+  node POSTLogout[
+    POST: /Logout
+    Permet de déconnecter
+    l'uttilisateur via son token
+  ]
+  node POSTRegister[
+    POST: /register
+    Permet d'enregister
+    l'uttilisateur
+  ]
+  node POSTRenew[
+    POST: /renew
+    Permet de récupérer
+    un access Token a
+    partir du renew token
+  ]
+}
+
+@enduml

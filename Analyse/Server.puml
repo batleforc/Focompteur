@@ -1,5 +1,24 @@
 @startuml
 
-Alice --> Bob : auth
+node Server
+
+node SocketIo
+
+node Push
+
+node Static
+
+node Koa
+frame Auth
+frame Compagnon
+
+
+Server --> SocketIo : /event
+Server --> Koa : /api
+Server --> Push : Notification\nPush
+Server --> Static : / (Client)
+
+Koa --> Auth : /Auth
+Koa --> Compagnon: /compagnon
 
 @enduml
