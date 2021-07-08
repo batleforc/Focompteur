@@ -1,0 +1,30 @@
+@startuml Client
+
+package "ForCompagnon"{
+  package "NoAccountOnTheDevice" {
+    [PublicHome]
+    [Login]
+    [Register]
+    [ForgotPassword(Plus tard)]
+  }
+  package "HasAnAccountOnTheDevice"{
+    [LogWithPin]
+    [DisconnectConnectedUser]
+  }
+  package "ConnectedWithPin"{
+    [Home]
+    [Profil]
+    package "Extension" {
+      package "ForCompteur"{
+        [PublicCompteur]
+        [MyCompteur]
+        [SharedCompteur]
+      }
+      [ForTodo]
+      [ForClassRoom]
+      [ForAgenda]
+    }
+  }
+}
+
+@enduml

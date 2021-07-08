@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export interface AuthIState {
   Authenticated: boolean;
+  Pending: boolean;
+  PinSet: boolean;
 }
 
 const initialState = {
