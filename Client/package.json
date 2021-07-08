@@ -54,7 +54,8 @@
     "ionic:serve": "craco start",
     "dev:ios": "ionic capacitor run ios --livereload --external",
     "dev:android": "ionic capacitor run android --livereload --external",
-    "sync": "npx cap sync"
+    "sync": "npx cap sync",
+    "ionicStart": "ionic serve"
   },
   "eslintConfig": {
     "extends": [
