@@ -1,6 +1,6 @@
 {
   "registerNewAccount": "Register a new account",
-  "SignInToAccount": "Sign in to your account",
+  "SignInToAccount": "Login to your account",
   "Username": "Username",
   "EmailAddress": "Email address",
   "Name": "Name",
@@ -8,5 +8,8 @@
   "Password": "Password",
   "Register": "Register",
   "SignIn": "sign in",
-  "AllowEmail": "Allow email"
+  "AllowEmail": "Allow email",
+  "Home": "Home",
+  "Login": "Login",
+  "LogOut": "Logout"
 }

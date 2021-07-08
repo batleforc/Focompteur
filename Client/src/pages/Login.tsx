@@ -65,7 +65,7 @@ const Login = () => {
                   />
                 </svg>
               </span>
-              {t("SignIn")}
+              {t("Login")}
             </button>
           </div>
         </form>

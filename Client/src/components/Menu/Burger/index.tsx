@@ -5,7 +5,7 @@ import BurgerItem from "./BurgerItem";
 import { AppDispatch, RootState } from "../../../action";
 import { setShowBurger } from "../../../action/ShowModal";
 import { AuthIState } from "../../../action/Auth";
-
+import { useTranslation } from "react-i18next";
 const MenuBurger = ({
   Burger,
   dispatch,
@@ -15,27 +15,28 @@ const MenuBurger = ({
   dispatch: AppDispatch;
   Auth: AuthIState;
 }) => {
+  const { t } = useTranslation();
   const menu = [
     {
-      label: "Home",
+      label: t("Home"),
       link: true,
       url: "/",
       available: true,
     },
     {
-      label: "Login",
+      label: t("Login"),
       link: true,
       url: "/login",
       available: !Auth.Authenticated,
     },
     {
-      label: "Register",
+      label: t("Register"),
       link: true,
       url: "/Register",
       available: !Auth.Authenticated,
     },
     {
-      label: "LogOut",
+      label: t("LogOut"),
       link: false,
       url: "/",
       available: Auth.Authenticated,
