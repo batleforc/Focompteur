@@ -1,0 +1,39 @@
+@startuml
+
+class User{
+  String Username
+  String Password
+  String Name
+  String Surname
+  String Email
+  String ProfilePic
+  Boolean AllowEmail
+  Boolean UiColore
+  Array<String> Token
+  Notification notif
+}
+
+class Notification{
+  Boolean AllowEmail
+  Boolean NotificationPush
+  Array<PushSub> PushDevice
+}
+
+class PushSub{
+  String endpoint
+  key keys
+}
+
+class key{
+  String auth
+  String P256dh
+}
+
+class Compagnon{
+  String Name
+  Number Coin
+  Array<Object> Inventory
+  String animal
+}
+
+@enduml

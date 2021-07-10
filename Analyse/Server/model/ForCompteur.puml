@@ -1,0 +1,81 @@
+@startuml
+
+enum CompteurType{
+  1 UntilDate
+  2 UntilDateTime
+  3 UntilDateTimeRecur
+  4 Increment
+}
+
+class CompteurSchema{
+  String Label
+  CompteurType Type
+  Date CreatedAt
+  Iparam Param
+}
+
+interface IParam{
+}
+
+interface IParamDateTime{
+  Date DateFin
+  Time TimeFin
+  Boolean Time
+}
+
+interface IParamDateTimeRecur{
+  Number Year
+  Number Month
+  Number Day
+  Number Hour
+  Date EndDate
+}
+
+interface IIncrement{
+  Number value
+  String LabelUnite
+}
+
+IIncrement --|> IParam
+IParamDateTime --|> IParam
+IParamDateTimeRecur --|> IParamDateTime
+
+class Subscribe{
+  ObjectId CompteurId
+  ObjectId UserId
+  Boolean Owner
+  Boolean SharedOwner
+  Boolean NotificationMail
+  Boolean NotificationSub
+  Display display
+  Photo BackGround
+}
+
+Interface Display{
+  Enum type
+}
+
+Enum DisplayDateType{
+  0 Chiffre
+  1 Dodo
+  2 Aiguille
+}
+
+Enum DisplayIncrementType{
+  0 Default // - 0 +
+}
+
+Interface DisplayDate{
+  DisplayDateType type
+}
+
+Interface DisplayIncrement{
+  DisplayIncrementType type
+}
+
+DisplayDateType --|> DisplayDate
+DisplayIncrementType --|> DisplayIncrement
+DisplayDate --|> Display
+DisplayIncrement --|> Display
+
+@enduml
