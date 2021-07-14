@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { AppDispatch, RootState } from "../../action";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
+import SetPin from "../../action/Auth/SetPin";
 const PinForm = ({
   dispatch,
   AuthPending,
@@ -45,8 +46,8 @@ const PinForm = ({
             <button
               onClick={(e) => {
                 e.preventDefault();
-                if (Pin.length > 4 && Pin.length <= 8) {
-                  console.log("GoodPin");
+                if (Pin.length >= 4 && Pin.length <= 8) {
+                  dispatch(SetPin({ Pin }));
                 } else {
                   setError(true);
                 }
