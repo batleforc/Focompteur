@@ -45,6 +45,15 @@ const MenuBurger = ({
       },
     },
     {
+      label: t("Disconnect"),
+      link: false,
+      url: "/",
+      available: Auth.Authenticated,
+      action: () => {
+        window.location.reload();
+      },
+    },
+    {
       label: t("LogWithPin"),
       link: true,
       url: "/logWithPin",
