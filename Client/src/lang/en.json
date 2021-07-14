@@ -11,5 +11,9 @@
   "AllowEmail": "Allow email",
   "Home": "Home",
   "Login": "Login",
-  "LogOut": "Logout"
+  "LogOut": "Logout",
+  "wrongData": "The data isn't correct",
+  "wrongSetPin": "The pin isn't correct",
+  "setPin": "Set Pin",
+  "Pin": "Pin"
 }
