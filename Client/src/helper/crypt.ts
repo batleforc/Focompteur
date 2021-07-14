@@ -17,6 +17,7 @@ export const cryptKeyExist = () =>
   localStorage.getItem(CRYPTKEY) !== "";
 export const StoreTemporaryDecryptedKey = (key: string) =>
   sessionStorage.setItem(CRYPTKEY, key);
+export const getTemporaryDecryptedKey = () => sessionStorage.getItem(CRYPTKEY);
 export const StoreDecryptedKey = (pin: string) =>
   sessionStorage.setItem(CRYPTKEY, getCryptKey(pin));
 export const getSessionDecryptedKey = () => sessionStorage.getItem(CRYPTKEY);

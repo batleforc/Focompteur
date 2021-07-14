@@ -6,6 +6,7 @@ import { StoreTemporaryDecryptedKey } from "../../helper/crypt";
 export interface LoginInterface {
   work: boolean;
   error?: boolean;
+  Token?: string;
 }
 
 export default createAsyncThunk(
@@ -22,8 +23,9 @@ export default createAsyncThunk(
       Password,
     })
       .then(({ data }) => {
+        console.log(data);
         StoreTemporaryDecryptedKey(data.cryptKey);
-        return { work: true };
+        return { work: true, Token: data.Token };
       })
       .catch(({ response }) => {
         return { work: false, error: response.status };

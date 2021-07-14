@@ -37,7 +37,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* General sidebar styles */
 .bm-menu {
   background: #373a47;
-  padding: 2.5em 1.5em 0;
+  padding: 0.5em 0.5em 0;
   font-size: 1.15em;
 }
 
@@ -49,12 +49,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Individual item */
 .bm-item {
-  display: inline-block;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
 }
 
 /* Styling of overlay */

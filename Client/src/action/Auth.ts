@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { hasCryptedKey } from "../helper/crypt";
 import Login, { LoginInterface } from "./Auth/Login";
+import LogWithPin from "./Auth/LogWithPin";
 import SetPin from "./Auth/SetPin";
 export interface AuthIState {
   Authenticated: boolean;
@@ -28,8 +29,9 @@ const AuthSlicer = createSlice({
       .addCase(Login.rejected, (state) => {
         state.Pending = false;
       })
-      .addCase(Login.fulfilled, (state) => {
+      .addCase(Login.fulfilled, (state, { payload }) => {
         state.Pending = false;
+        state.token = payload.Token || "";
       })
       .addCase(SetPin.pending, (state) => {
         state.Pending = true;
@@ -41,6 +43,19 @@ const AuthSlicer = createSlice({
         state.Pending = true;
         if (payload.work) {
           state.PinSet = true;
+          state.Authenticated = true;
+        }
+      })
+      .addCase(LogWithPin.pending, (state) => {
+        state.Pending = true;
+      })
+      .addCase(LogWithPin.rejected, (state) => {
+        state.Pending = false;
+      })
+      .addCase(LogWithPin.fulfilled, (state, { payload }) => {
+        state.Pending = false;
+        if (payload.work) {
+          state.token = payload.token || "";
           state.Authenticated = true;
         }
       }),

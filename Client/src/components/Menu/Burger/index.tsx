@@ -39,9 +39,18 @@ const MenuBurger = ({
       label: t("LogOut"),
       link: false,
       url: "/",
-      available: Auth.PinSet,
+      available: Auth.Authenticated,
       action: () => {
         console.log("Disconnect");
+      },
+    },
+    {
+      label: t("LogWithPin"),
+      link: true,
+      url: "/logWithPin",
+      available: Auth.PinSet && !Auth.Authenticated,
+      action: () => {
+        console.log("LogWithPin");
       },
     },
   ];

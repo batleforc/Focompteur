@@ -24,11 +24,12 @@ const BurgerItem = ({
     children: JSX.Element | JSX.Element[] | string;
   }) =>
     link ? (
-      <Link onClick={() => action()} to={url}>
+      <Link className="bm-item" onClick={() => action()} to={url}>
         {children}
       </Link>
     ) : (
       <button
+        className="bm-item"
         onClick={() => {
           dispatch(setShowBurger(false));
           action();

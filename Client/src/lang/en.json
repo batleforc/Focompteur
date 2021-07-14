@@ -15,5 +15,6 @@
   "wrongData": "The data isn't correct",
   "wrongSetPin": "The pin isn't correct",
   "setPin": "Set Pin",
-  "Pin": "Pin"
+  "Pin": "Pin",
+  "LogWithPin": "Log with pin"
 }
