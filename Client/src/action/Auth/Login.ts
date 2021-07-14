@@ -23,7 +23,6 @@ export default createAsyncThunk(
       Password,
     })
       .then(({ data }) => {
-        console.log(data);
         StoreTemporaryDecryptedKey(data.cryptKey);
         return { work: true, Token: data.Token };
       })

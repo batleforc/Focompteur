@@ -1,11 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import {
-  getSessionDecryptedKey,
-  getTemporaryDecryptedKey,
-  hasSessionDecryptedKey,
-  setCryptKey,
-} from "../../helper/crypt";
+import { getSessionDecryptedKey, setCryptKey } from "../../helper/crypt";
 import {
   storeRenewTokenInLocal,
   storeRenewTokenInSession,
@@ -20,7 +15,7 @@ export default createAsyncThunk(
   "Auth/SetPin",
   async ({ Pin }: { Pin: string }, { getState }): Promise<LoginInterface> => {
     const { Auth } = getState() as RootState;
-    if (getTemporaryDecryptedKey() !== undefined) {
+    if (getSessionDecryptedKey() !== undefined) {
       storeRenewTokenInLocal(Auth.token, Pin);
       storeRenewTokenInSession(Auth.token);
       setCryptKey(getSessionDecryptedKey() || "", Pin);

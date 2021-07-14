@@ -7,7 +7,6 @@ export const storeTokenInSession = (Token: string) =>
   sessionStorage.setItem(TokenKey, Token);
 export const getTokenInSession = () => sessionStorage.getItem(TokenKey);
 export const storeRenewTokenInLocal = (Token: string, pin: string) => {
-  console.log(Token);
   localStorage.setItem(RenewTokenKey, cryptData(Token, pin));
 };
 export const storeRenewTokenInSession = (Token: string) =>
