@@ -2,6 +2,7 @@ require("dotenv-flow").config({
   path: "./src/Config",
 });
 console.log("Server Startup  ", process.env.TEST);
+
 import Connection from "./Helper/dataBase";
 import WebServer from "./Helper/Server";
 import Api from "./Api/Api";

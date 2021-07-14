@@ -1,6 +1,6 @@
 import { getEnvString } from "./env";
 
-export interface pushSub {
+export interface PushSub {
   endpoint: string;
   keys: {
     auth: string;
@@ -18,7 +18,7 @@ class NotificationHandler {
       getEnvString("VAPID_PRIVATE")
     );
   }
-  sendNotification = (Subscription: pushSub, payload: object) => {
+  sendNotification = (Subscription: PushSub, payload: object) => {
     this.WebPush.sendNotification(Subscription, payload);
   };
 }

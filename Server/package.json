@@ -21,6 +21,7 @@
     "nodemon": "^2.0.9",
     "socket.io": "^4.1.2",
     "typescript": "^4.3.5",
+    "uuid": "^8.3.2",
     "web-push": "^3.4.5"
   },
   "devDependencies": {
@@ -34,7 +35,8 @@
     "@types/koa__cors": "^3.0.2",
     "@types/koa__router": "^8.0.4",
     "@types/minio": "^7.0.7",
-    "@types/node": "^16.0.0"
+    "@types/node": "^16.0.0",
+    "@types/uuid": "^8.3.1"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development concurrently --names \"Build,Watch\" -c \"grey.bold,blue.bold\" \"yarn:watchBuild\" \"yarn:watchSrc\" --node-env=development",

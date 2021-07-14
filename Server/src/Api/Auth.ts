@@ -19,9 +19,9 @@ var router = new Router();
 router
   .get("/", async (ctx: any, next: any) => {
     var Token = ctx.get("Authorization").replace("Bearer ", "");
-    if (validateToken(Token, false)) {
+    if (validateToken(Token, true)) {
       var user = await User.findOne({
-        Username: getPayloadJson(await getTokenContent(Token, false)).Username,
+        Username: getPayloadJson(await getTokenContent(Token, true)).Username,
       });
       ctx.body = {
         Username: user.Username,
@@ -59,6 +59,7 @@ router
         ctx.body = {
           message: "Here is your Token, nice use",
           Token: Token,
+          cryptKey: user.cryptKey,
         };
       } else {
         ctx.throw(
@@ -144,7 +145,9 @@ router
           Name,
           Surname,
           Email,
-          AllowEmail,
+          Notif: {
+            AllowEmail,
+          },
         });
         await user.save();
         ctx.body = {
