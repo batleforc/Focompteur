@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from "../../action";
 import { setShowBurger } from "../../action/ShowModal";
 import { Link } from "react-router-dom";
 import MenuBurger from "./Burger";
+import Icon from "../Icon";
 const Menu = ({
   titre,
   dispatch,
@@ -22,9 +23,7 @@ const Menu = ({
             onClick={() => dispatch(setShowBurger(true))}
           >
             <span className="sr-only">Open main menu</span>
-            <svg className="icon icon-stack">
-              <use href="/assets/icon/symbol.svg#icon-stack"></use>
-            </svg>
+            <Icon Label="stack" className="icon icon-stack" />
           </button>
           <div className="flex-1 flex items-stretch justify-start">
             <div className="block sm:ml-6">

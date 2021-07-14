@@ -27,19 +27,19 @@ const MenuBurger = ({
       label: t("Login"),
       link: true,
       url: "/login",
-      available: !Auth.Authenticated,
+      available: !Auth.PinSet,
     },
     {
       label: t("Register"),
       link: true,
       url: "/Register",
-      available: !Auth.Authenticated,
+      available: !Auth.PinSet,
     },
     {
       label: t("LogOut"),
       link: false,
       url: "/",
-      available: Auth.Authenticated,
+      available: Auth.PinSet,
       action: () => {
         console.log("Disconnect");
       },
