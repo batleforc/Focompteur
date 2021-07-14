@@ -7,7 +7,6 @@ class User{
   String Surname
   String Email
   String ProfilePic
-  Boolean AllowEmail
   Boolean UiColore
   Array<String> Token
   Notification notif
